@@ -1,8 +1,24 @@
 # Instagram catalog posts
 
-Small Streamlit app for an online clothing shop. Put a dress photo in a folder, press **Generate image**, and an OpenAI-compatible API returns a catalog photo of that outfit on a fashion mannequin. **Generate text** writes the listing copy. The general prompts are saved in `prompts/`, and your own notes are added for that run only.
+Turn photos of one outfit into a single Instagram post: a catalog image of that outfit on a mannequin, and a caption for the same post.
 
-The caption template uses the placeholders `SHOP_NAME`, `SHOP_ADDRESS`, and `SHOP_TAGLINE`. Put your own shop details there. API keys stay in `.env`, and outfit photos stay in `data/`. Neither is part of this repository. The Python package is `cloth_store`.
+You select up to 10 photos of the same garment, enter a suit code, and press one of two buttons. **Generate image** sends those photos in one call and saves `instaimage-<code>.png` at 1080×1350 (4:5). **Generate text** is a separate call and saves one caption, `instaimage-<code>.txt`, which can also be reused on Facebook. Both files land in `data/output/`.
+
+```text
+Photos of one outfit
+        |
+        +-- Generate image --> OpenAI-compatible image edit --> Instagram portrait
+        |
+        +-- Generate text  --> DeepSeek (or another chat model) --> caption
+```
+
+The image call keeps the garment from the photos and places it on a fashion mannequin, not a real person. The caption follows the template in `prompts/text_prompt.txt`. Shop name, address, and tagline there are the placeholders `SHOP_NAME`, `SHOP_ADDRESS`, and `SHOP_TAGLINE`. Replace them with your own shop. Notes you type in the app are added for that run only.
+
+## What is not in this repository
+
+API keys stay in `.env`. Outfit photos stay in `data/images/`. Generated posts stay in `data/output/`. None of those are committed. The Python package is `cloth_store`.
+
+Tests use stand-in API clients, so `pytest` does not need a key or a photo.
 
 ## Setup
 
@@ -13,23 +29,19 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Put the API keys in `.env`. The image call stays on an OpenAI-compatible server. Captions use DeepSeek:
+Put your keys in `.env`. The same fields are in the sidebar, so you can switch servers without editing code.
 
 ```bash
 API_KEY=sk-...
 API_BASE_URL=https://api.openai.com/v1
 IMAGE_MODEL=gpt-image-1-mini
-```
 
-In the sidebar, pick another OpenAI image model when needed: `gpt-image-1`, `gpt-image-1.5`, `gpt-image-2`, or `chatgpt-image-latest`. The stronger models follow the suit photos more closely and cost more. Captions still use DeepSeek:
-
-```bash
 TEXT_API_KEY=sk-...
 TEXT_API_BASE_URL=https://api.deepseek.com
 TEXT_MODEL=deepseek-flash
 ```
 
-The same fields are in the sidebar, so you can switch servers without editing code.
+Other image models you can pick in the sidebar: `gpt-image-1`, `gpt-image-1.5`, `gpt-image-2`, `chatgpt-image-latest`. The stronger models follow the garment photos more closely and cost more.
 
 ## Run
 
@@ -37,9 +49,7 @@ The same fields are in the sidebar, so you can switch servers without editing co
 streamlit run app.py
 ```
 
-Put JPG, PNG, or WEBP dress photos in `data/images/`, or type another folder path in the sidebar. Select up to 10 photos of the same outfit, enter the suit code, then press **Generate image** or **Generate text**.
-
-**Generate image** sends those photos in one call and saves one portrait, `instaimage-<code>.png`, at 1080×1350 (4:5) for Instagram. **Generate text** is a separate call. It sends the same photos to DeepSeek with the text prompt and writes one caption, which can also be reused on Facebook. Both files land in `data/output/`.
+Put JPG, PNG, or WEBP photos in `data/images/`, or type another folder path in the sidebar.
 
 ## Tests
 
@@ -52,16 +62,12 @@ pytest
 
 ```text
 app.py                         Streamlit entry point
-prompts/                       saved image and text prompts
+prompts/                       image prompt and caption template
 src/cloth_store/
   config.py                    paths and API settings
-  models.py                    generated photo and text results
   services/                    client, prompts, image call, text call
-  ui/
-    styles.css
-    components/                sidebar, gallery, prompt editors, results
-    pages/                     the catalog screen
-data/images/                   dress photos you send
-data/output/                   catalog photos and marketing text
-tests/                         pytest, no live API key required
+  ui/                          sidebar, gallery, results
+data/images/                   photos you add locally
+data/output/                   generated portrait and caption
+tests/                         pytest, no live API key
 ```
