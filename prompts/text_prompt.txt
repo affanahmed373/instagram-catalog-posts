@@ -1,0 +1,42 @@
+Write one Instagram caption for the Pakistani outfit in the photos.
+The photos are different views of the same outfit. Use all of them, and write a single caption, not one caption per photo.
+This caption is for Instagram. It can also be reused on the related Facebook post.
+Follow this layout. Change the description so it matches the photos, and use the suit code from the line that starts with "Suit code:".
+Put that same code after "Code:" in the first line and again in "mention Code". Do not invent a different code.
+Keep the shop name, the address, the emojis, the closing line, and the disclaimer.
+
+✨ **New Arrival | Code: CODE** ✨
+
+DESCRIPTION
+
+📍 Available at **SHOP_NAME**
+SHOP_ADDRESS
+
+To order or ask about price, size, and availability:
+💌 Send us a DM and mention **Code CODE**
+📦 Delivery is also available — DM us for delivery details
+🏬 Or visit us in store at **SHOP_NAME**
+
+SHOP_TAGLINE ✨
+
+⚠️ The actual item may differ slightly from the photo.
+
+HASHTAGS
+
+Write DESCRIPTION as one paragraph in this style:
+A rich maroon embroidered suit with delicate floral detailing, elegant embroidered sleeve cuffs, matching plain trousers, and a soft matching dupatta. The graceful tassel detail and subtle shimmer make this a beautiful choice for Eid, dawats, family gatherings, weddings, and special occasions. ❤️✨
+Describe only what is visible. State the pieces you can see.
+Say whether the bottom is a shalwar or a trouser. A shalwar is loose through the leg. A trouser is a straighter pant. Decide from the photos for a two-piece or three-piece set.
+Elastic gathered at the waist or abdomen is the trouser waist. Do not call that elastic at the foot.
+The opening at the leg is usually a plain hem. Mention an elastic cuff at the ankle only when the photos clearly show one.
+Describe the neck design only as it appears in the photos. Do not invent a different neckline.
+Sleeves are usually full long sleeves. Mention short sleeves or sleeveless only when the photos clearly show that.
+First check whether a dupatta is visible in any photo. Mention a dupatta only when one is shown, or when the shop outfit details say Dupatta: yes. Do not invent a dupatta. If the shop outfit details say Dupatta: no, do not mention a dupatta. If they say information not available, decide only from the photos and never assume a dupatta by default.
+Say whether the set is one-piece, two-piece, or three-piece, and include that piece count in the DESCRIPTION (for example "1-piece", "2-piece", or "3-piece"). If the shop outfit details name how many pieces, follow that and state it clearly. If they say information not available, decide only from the photos and still say the piece count.
+A one-piece outfit is the shirt only in the post. The shalwar shown in the photo is styling only and is not included by default. In the DESCRIPTION, say that a plain white or plain black shalwar can be added upon request. Do not say the shalwar is included unless the shop outfit details say otherwise.
+A three-piece set is a kameez or shirt, a bottom, and a dupatta.
+A two-piece set is the kameez or shirt plus one other garment. Say whether that other garment is a dupatta or a bottom (shalwar or trouser).
+Do not call it three-piece when a dupatta or a bottom is missing, and do not mention a piece that is not in the photo.
+Do not invent a price.
+Keep the disclaimer exactly as written: "The actual item may differ slightly from the photo." Do not drop it, rewrite it, or move it.
+For HASHTAGS, keep #YourShop #YourCity #PakistaniSuits #EidOutfit #WeddingWear and add a few that match the color and the outfit.

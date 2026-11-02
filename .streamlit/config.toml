@@ -1,0 +1,4 @@
+[runner]
+# Finish the current script step before another click starts a second generate.
+# Cancel and free the page still ends a wait early so you can try again.
+fastReruns = false
